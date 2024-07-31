@@ -22,14 +22,14 @@ const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
 const user = require("./routes/user.js");
 
-const dbUrl=process.env.ATLAS_DB_URL;
+
 many().then(() =>{
     console.log("connection successful");
 }).catch(err =>{
     console.log(err);
 });
 async function many(){
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(process.env.ATLASDB_URL);
 };
 
 
@@ -42,9 +42,9 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 
 const store=mongoStore.create({
-    mongoUrl:dbUrl,
+    mongoUrl:process.env.ATLASDB_URL,
     crypto:{
-        secret:"mysecretcode"
+        secret:process.env.SECRET,
     },
     touchAfter:24*3600,
 })
@@ -53,7 +53,7 @@ store.on("error",()=>{
 })
 const sessionOptions={
     store,
-    secret: "mysecretcode",
+    secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie: {
