@@ -53,6 +53,9 @@ body{
     justify-content: center;
     align-items: space-evenly;
 }
+.footer{
+    padding-top: 100vh;
+}
 
 /* Cards */
 .listing-card{
