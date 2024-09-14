@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: auto;
 }
 
 .container{
@@ -54,8 +55,13 @@ body{
     align-items: space-evenly;
 }
 .footer{
-    padding-top: 100vh;
+  position: relative;
+  margin-top: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
 
 /* Cards */
 .listing-card{
@@ -85,7 +91,8 @@ body{
 /* Show Page */
 
 .show-img{
-    height: 50vh;
+    height: 60vh;
+    
 }
 
 .btns{
@@ -94,4 +101,110 @@ body{
 .show-card{
     padding-left: 0;
     padding-right: 0;
+}
+/* edit ejs */
+.edit-image{
+    height: 400px;
+    width: 400px;
+}
+ 
+/* responsive of nave bar */
+@media (max-width:400px){
+    .profile-info{
+        height: 560px;
+        width: 100%;
+        margin-top: 9px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        
+    }
+   .nav-link{
+        margin-top: 10px;
+        margin-left: 10px;
+        box-shadow: 1px 1px 1px #fe424d;
+        opacity: .8;
+    }
+    .nav-link:active{
+        border: 2px solid black;
+        box-shadow: 5px 3px 8px #fe424d;
+        opacity: 1;
+    }
+    .search-btn{
+        height: 40px;
+        width: 100px;
+      background-color: #fe424d;
+      color: white;
+      border-radius: 10px !important;
+      padding: none !important;
+      position: relative !important;
+  }
+  .search-btn:hover{
+    background-color: #fe424d;
+      color: white;
+  }
+  .search-btn i{
+    display: none !important;
+    
+  }
+  .search-inp{
+    height: 40px;
+    width: 200px;
+    border-radius: 10px !important;
+    position: relative !important;
+   
+  }
+  .navbar-brand .icon-main{
+    display: none !important;
+  }
+  .nav-search-btn{
+       height: 40px ;
+       width: 300px ;
+  }
+  #filters{
+    height: 20px;
+   
+  }
+  .filter{ 
+    height: 40px;
+    display: flex;
+    overflow-x: auto;
+   }
+}
+/* responsive for show of airbnb your home */
+
+@media (max-width:400px){
+    .show-img{
+        height: 200px;
+        width: 300px;
+    }
+    .row{
+        margin-left: -60px !important;
+    }
+    .card-body{
+        width: 300px;
+    }
+    .btns .btn{
+        width: 100px;
+    }
+    .new-listing{
+        width: 300px;
+    }
+}
+
+/* edit image */
+
+@media(max-width:400px){
+    .edit-image{
+        height: 200px;
+        width: 300px;
+    }
+}
+
+/* index page */
+
+@media(max-width:400px){
+    .card-info{
+        margin-left: 50px;
+    }
 }

@@ -26,8 +26,9 @@
   
     
    </style>
+
 <div id="filters ">
-  <div class="filter">
+  <div  class="filter ">
      <div>
       <i class="fa-solid fa-fire"></i>
       <p>Trending</p>
@@ -80,16 +81,19 @@
       <i class="fa-solid fa-igloo"></i>
       <p>Domes</p>
      </div>
+ 
      
-     <div id="toggleBtn">
+     <!-- <div id="toggleBtn">
         <div class="form-check-reverse form-switch ">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
           <label class="form-check-label" for="flexSwitchCheckDefault">Display total after tax</label>
         </div>
-      </div> 
+      </div>  -->
   </div>
 </div>
-    
+
+
+
 <div class="row row-cols-lg-4 row-cols-md-2 row-cols-xs-1 mt-4" >
     <%for(let listing of allListings){%>
       <a href="listings/<%= listing._id%>" class="listing-link">
@@ -97,16 +101,17 @@
            <img src="<%= listing.image.url %>" class="card-img-top" alt="listings-image" style="height: 20rem;">
            <div class="card-img-overlay"></div>
            <div class="card-body">
-              <p class="card-text">
+              <p class="card-text card-info">
                <b> <%= listing.title %></b><br>
                &#8377; <%= listing.price.toLocaleString("en-IN") %>
-               <i class="onClick">20% GST </i>
+               <!-- <i class="onClick">20% GST </i> -->
               </p>
               
             </div>
         </div>
       </a>
       <%}%>
+</div>
 </div>
 
 <script>

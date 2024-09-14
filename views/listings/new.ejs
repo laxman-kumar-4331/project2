@@ -3,10 +3,10 @@
     <div class="col-6 offset-3">
         <br>
         <h3>Create New listing</h3>
-    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data" >
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input name="listing[title]" placeholder="entert title" type="text" class="form-control" required>
+            <label for="title" class="form-label new-listing">Title</label>
+            <input name="listing[title]" placeholder="entert title" type="text" class="form-control new-listing" required>
             <div class="invalid-feedback">
                 Please choose a Title!
               </div>
@@ -14,33 +14,33 @@
                 Title Looks good!
               </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 new-listing">
             <label for="description" class="form-label">Description</label>
             <textarea name="listing[description]" class="form-control" required ></textarea>
             <div class="invalid-feedback">
                 Please enter a short description!
               </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 new-listing">
             <label for="image" class="form-label">Upload Image</label>
             <input name="listing[image]" type="file" class="form-control" required >
             
         </div>
-         <div class="mb-3">
+         <div class="mb-3 new-listing">
             <label for="price" class="form-label">Price</label>
             <input name="listing[price]" placeholder="entert price" type="number" class="form-control" required>
             <div class="invalid-feedback">
                 Please enter Price!
             </div>
          </div>
-         <div class="mb-3">
+         <div class="mb-3 new-listing">
             <label for="location" class="form-label">Location</label>
             <input name="listing[location]" placeholder="entert location" type="text" class="form-control" required>
             <div class="invalid-feedback">
                 Please enter the location!
             </div>
          </div>
-        <div class="mb-3">
+        <div class="mb-3 new-listing">
             <label for="country" class="form-label">Country</label>
             <input name="listing[country]" placeholder="entert country" type="text" class="form-control" required>
             <div class="invalid-feedback">
