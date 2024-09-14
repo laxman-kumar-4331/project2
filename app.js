@@ -29,8 +29,8 @@ many().then(() =>{
     console.log(err);
 });
 async function many(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
-    // await mongoose.connect(process.env.ATLASDB_URL);
+    //await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
+     await mongoose.connect(process.env.ATLASDB_URL);
 };
 
 
@@ -42,20 +42,20 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
 
-// const store=mongoStore.create({
-//     mongoUrl:process.env.ATLASDB_URL,
-//     crypto:{
-//         secret:process.env.SECRET,
-//     },
-//     touchAfter:24*3600,
-// })
-// store.on("error",()=>{
-//     console.log("err",err);
-// })
+const store=mongoStore.create({
+    mongoUrl:process.env.ATLASDB_URL,
+    crypto:{
+        secret:process.env.SECRET,
+    },
+    touchAfter:24*3600,
+})
+store.on("error",()=>{
+    console.log("err",err);
+})
 const sessionOptions={
-    // store,
-    //secret:process.env.SECRET,
-    secret:"mycode",
+     store,
+    secret:process.env.SECRET,
+    // secret:"mycode",
     resave:false,
     saveUninitialized:true,
     cookie: {
