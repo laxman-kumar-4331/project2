@@ -30,7 +30,7 @@ many().then(() =>{
 });
 async function many(){
     //await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
-     await mongoose.connect(process.env.ATLASDB_URL);
+    await mongoose.connect(process.env.ATLASDB);
 };
 
 
@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 
 const store=mongoStore.create({
-    mongoUrl:process.env.ATLASDB_URL,
+    mongoUrl:process.env.ATLASDB,
     crypto:{
         secret:process.env.SECRET,
     },
