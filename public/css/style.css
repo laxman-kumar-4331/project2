@@ -108,6 +108,14 @@ body{
     width: 400px;
 }
  
+/* Reviews */
+.reviews-show{
+    width: 700px;
+    margin-top: 3px;
+}
+.text-comment{
+    width: 700px;
+}
 /* responsive of nave bar */
 @media (max-width:400px){
     .profile-info{
@@ -206,5 +214,25 @@ body{
 @media(max-width:400px){
     .card-info{
         margin-left: 50px;
+    }
+}
+
+/* Reviews */
+
+@media(max-width:400px){
+    .reviews-show{
+      
+        width: 100%;
+        display: inline;
+        margin-left: 10px;
+        margin-top: 3px;
+    }
+    .text-comment{
+        width: 100%;
+    }
+}
+@media(max-width:855px){
+    .text-comment{
+        width: 100%;
     }
 }
